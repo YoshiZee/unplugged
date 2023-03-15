@@ -240,6 +240,14 @@ textarea {
     align-items: center;
    }
 
+   footer span {
+    margin: 0 10px 0 10px;
+   }
+   
+   .icon-background {
+    color:#527158
+   }
+
    footer .copyright {
     margin: 20px 0;
    }
@@ -330,6 +338,11 @@ textarea {
    .features p {
     text-align: center;
     margin: 0;
+   }
+
+   .features i {
+    font-size: 3.75em;
+    margin-bottom: 40px;
    }
 
    /* Reviews */
