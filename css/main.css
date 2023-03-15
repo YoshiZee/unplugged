@@ -84,6 +84,17 @@ textarea {
 }
 
 /* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+   .browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+  }
+
+/* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
@@ -103,7 +114,7 @@ textarea {
    ul,
    ol {
     list-style-type: none;
-
+    margin: 0;
    }
 
    a {
@@ -115,6 +126,7 @@ textarea {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 1.875em;
+    margin: 0;
    }
 
    h3, h4 {
@@ -146,12 +158,6 @@ textarea {
     margin: 50px 0;
    }
 
-   .content-wrapper {
-    width: 90%;
-    margin: 50px 0;
-
-   }
-   
    /* --------- Base Header - Footer Styles -----------*/
 
    header, footer {
@@ -238,10 +244,11 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.3125em;
    }
 
    footer span {
-    margin: 0 10px 0 10px;
+    margin: 0 15px 0 15px;
    }
    
    .icon-background {
@@ -445,8 +452,7 @@ textarea {
  * Hide visually and from screen readers
  */
 
-.hidden,
-[hidden] {
+.hidden {
   display: none !important;
 }
 
@@ -459,7 +465,7 @@ textarea {
  *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
  */
 
-.sr-only {
+.visuallyhidden {
   border: 0;
   clip: rect(0, 0, 0, 0);
   height: 1px;
@@ -473,13 +479,13 @@ textarea {
 }
 
 /*
- * Extends the .sr-only class to allow the element
+ * Extends the .visuallyhidden class to allow the element
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
 
-.sr-only.focusable:active,
-.sr-only.focusable:focus {
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
   clip: auto;
   height: auto;
   margin: 0;
@@ -509,13 +515,13 @@ textarea {
  *    `:before` to contain the top-margins of child elements.
  */
 
-.clearfix::before,
-.clearfix::after {
+.clearfix:before,
+.clearfix:after {
   content: " ";
   display: table;
 }
 
-.clearfix::after {
+.clearfix:after {
   clear: both;
 }
 
@@ -607,12 +613,16 @@ textarea {
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-flow: row wrap;
+      flex-flow: column wrap;
       flex-basis: 50%;
      }
 
      .features .features-item-description {
       width: 62%;
+     }
+
+     .features i {
+      margin-bottom: 30px;
      }
 
      /* Reviews */
@@ -659,6 +669,11 @@ textarea {
 
      footer p {
       line-height: 1.285;
+     }
+
+     footer .social-icons {
+      width: 12.5em;
+      justify-content: space-between;
      }
 
      footer .copyright {
@@ -828,11 +843,12 @@ textarea {
 
 @media print {
   *,
-  *::before,
-  *::after {
+  *:before,
+  *:after {
     background: #fff !important;
     color: #000 !important;
     /* Black prints faster */
+    -webkit-box-shadow: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -842,11 +858,11 @@ textarea {
     text-decoration: underline;
   }
 
-  a[href]::after {
+  a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  abbr[title]::after {
+  abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
@@ -854,8 +870,8 @@ textarea {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
     content: "";
   }
 
