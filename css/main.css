@@ -115,6 +115,7 @@ textarea {
    ol {
     list-style-type: none;
     margin: 0;
+    padding: 0;
    }
 
    a {
@@ -330,7 +331,7 @@ textarea {
     margin-bottom: 60px;
    }
 
-   .features-article {
+   .features article {
     width: 63%;
     margin: 30px 0;
    }
@@ -368,7 +369,6 @@ textarea {
 
    .reviews h3 {
     width: 55%;
-    padding: 20px 0;
    }
 
    /* ==========================================================================
@@ -672,8 +672,8 @@ textarea {
      }
 
      footer .social-icons {
-      width: 12.5em;
-      justify-content: space-between;
+      width: 100%;
+      justify-content: space-around;
      }
 
      footer .copyright {
@@ -800,8 +800,9 @@ textarea {
 
     footer h4 {
       font-size: 1.875em;
-    }
+    }    
 
+         
     /* =======================================================================
     About Page
     ========================================================================== */
